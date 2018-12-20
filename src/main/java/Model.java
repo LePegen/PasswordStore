@@ -1,20 +1,19 @@
-import javax.crypto.SecretKey;
 import java.util.ArrayList;
 
 public class Model {
     private String key;
-    private ArrayList<String> password;
+    private ArrayList<String> data;
 
     public Model() {
-        this.password=new ArrayList<String>();
+        this.data =new ArrayList<String>();
     }
 
-    public ArrayList<String> getPassword() {
-        return password;
+    public ArrayList<String> getData() {
+        return data;
     }
 
-    public void setPassword(ArrayList<String> password) {
-        this.password = password;
+    public void setData(ArrayList<String> data) {
+        this.data = data;
     }
 
     public String getKey() {

@@ -20,11 +20,11 @@ public class Encrypt extends ParentCrypto implements Encryptable {
 
             //encrypt data
             cipher.init(Cipher.ENCRYPT_MODE,tempKey);
-            for (int i = 0; i < model.getPassword().size(); i++) {
-                String currentPass=model.getPassword().get(i);
-                encrypted=cipher.doFinal(currentPass.getBytes());
+            for (int i = 0; i < model.getData().size(); i++) {
+                String currentData=model.getData().get(i);
+                encrypted=cipher.doFinal(currentData.getBytes());
                 cipherText=Base64.getEncoder().encodeToString(encrypted);
-                newModel.getPassword().add(cipherText);
+                newModel.getData().add(cipherText);
             }
 
         } catch (NoSuchAlgorithmException e) {

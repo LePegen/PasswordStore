@@ -1,11 +1,8 @@
 
 import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
-import java.security.Key;
-import java.security.PrivateKey;
 import java.util.Base64;
 
 public class Decrypt extends ParentCrypto implements Decryptable{
@@ -21,11 +18,11 @@ public class Decrypt extends ParentCrypto implements Decryptable{
 
             //decrypt data
             cipher.init(Cipher.DECRYPT_MODE, tempKey);
-            for (int i = 0; i < model.getPassword().size(); i++) {
-                String password = "";
-                byte[] bytePass= Base64.getDecoder().decode(model.getPassword().get(i));
-                password = new String(cipher.doFinal(bytePass), StandardCharsets.UTF_8);
-                newModel.getPassword().add(password);
+            for (int i = 0; i < model.getData().size(); i++) {
+                String data = "";
+                byte[] bytePass= Base64.getDecoder().decode(model.getData().get(i));
+                data = new String(cipher.doFinal(bytePass), StandardCharsets.UTF_8);
+                newModel.getData().add(data);
             }
 
         } catch (Exception e) {

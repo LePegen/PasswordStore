@@ -8,7 +8,7 @@ public class KeyDerivation {
     /**
      * Returns a derived key when the hashed password the the inputted hash is equal
      *
-     * @param password inputted password of the user to compare with inputted hash
+     * @param password inputted password of the user to compare with passed hash
      * @param hash     inputted hash compared with the hash of the inputted password
      * @return returns a derived key
      * @throws WrongPasswordException
@@ -26,7 +26,7 @@ public class KeyDerivation {
      * @param toHash input of user to hash
      * @return hashed input of the user
      */
-    private String getHash(String toHash) {
+    public String getHash(String toHash) {
         String hashed = null;
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
